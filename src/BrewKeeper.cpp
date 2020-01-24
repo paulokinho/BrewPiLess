@@ -71,7 +71,6 @@ void BrewKeeper::setModeFromRemote(char mode){
 	char unit, ori_mode;
 	float beerSet,fridgeSet;
 	brewPi.getControlParameter(&unit,&ori_mode,&beerSet,&fridgeSet);
-	if(mode == 'p' && ori_mode != 'p') _profile.setScheduleStartDate(TimeKeeper.getTimeSeconds());
 	char buff[36];
 	sprintf(buff,"j{mode:%c}",mode);
 	DBG_PRINTF("write:%s\n",buff);
